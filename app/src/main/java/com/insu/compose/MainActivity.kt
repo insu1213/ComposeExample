@@ -51,7 +51,7 @@ fun MessageCard(msg: Message) {
     Row(modifier = Modifier.padding(all = 8.dp)) {
         Image(
             painter = painterResource(msg.picture),
-            contentDescription = "zoe img",
+            contentDescription = "img",
             contentScale = ContentScale.Crop,
             modifier = Modifier
                 .size(40.dp)
