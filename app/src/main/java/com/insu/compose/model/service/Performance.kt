@@ -14,16 +14,15 @@ See the License for the specific language governing permissions and
 limitations under the License.
  */
 
-package com.insu.compose.ui.theme
+package com.insu.compose.model.service
 
-import androidx.compose.material.Typography
-import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.sp
+import com.google.firebase.perf.ktx.trace
+import com.google.firebase.perf.metrics.Trace
 
-val Typography =
-  Typography(
-    body1 =
-      TextStyle(fontFamily = FontFamily.Default, fontWeight = FontWeight.Normal, fontSize = 16.sp)
-  )
+
+/**
+ * Trace a block with Firebase performance.
+ *
+ * Supports both suspend and regular methods.
+ */
+inline fun <T> trace(name: String, block: Trace.() -> T): T = Trace.create(name).trace(block)

@@ -14,16 +14,25 @@ See the License for the specific language governing permissions and
 limitations under the License.
  */
 
-package com.insu.compose.ui.theme
+package com.insu.compose.model
 
-import androidx.compose.material.Typography
-import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.sp
+enum class Priority {
+  None,
+  Low,
+  Medium,
+  High;
 
-val Typography =
-  Typography(
-    body1 =
-      TextStyle(fontFamily = FontFamily.Default, fontWeight = FontWeight.Normal, fontSize = 16.sp)
-  )
+  companion object {
+    fun getByName(name: String?): Priority {
+      values().forEach { priority -> if (name == priority.name) return priority }
+
+      return None
+    }
+
+    fun getOptions(): List<String> {
+      val options = mutableListOf<String>()
+      values().forEach { priority -> options.add(priority.name) }
+      return options
+    }
+  }
+}

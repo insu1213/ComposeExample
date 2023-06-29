@@ -14,16 +14,14 @@ See the License for the specific language governing permissions and
 limitations under the License.
  */
 
-package com.insu.compose.ui.theme
+package com.insu.compose.model.service.impl
 
-import androidx.compose.material.Typography
-import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.sp
+import com.insu.compose.model.service.LogService
+import com.google.firebase.crashlytics.ktx.crashlytics
+import com.google.firebase.ktx.Firebase
+import javax.inject.Inject
 
-val Typography =
-  Typography(
-    body1 =
-      TextStyle(fontFamily = FontFamily.Default, fontWeight = FontWeight.Normal, fontSize = 16.sp)
-  )
+class LogServiceImpl @Inject constructor() : LogService {
+  override fun logNonFatalCrash(throwable: Throwable) =
+    Firebase.crashlytics.recordException(throwable)
+}

@@ -14,16 +14,19 @@ See the License for the specific language governing permissions and
 limitations under the License.
  */
 
-package com.insu.compose.ui.theme
+package com.insu.compose.model
 
-import androidx.compose.material.Typography
-import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.sp
+import com.google.firebase.firestore.DocumentId
 
-val Typography =
-  Typography(
-    body1 =
-      TextStyle(fontFamily = FontFamily.Default, fontWeight = FontWeight.Normal, fontSize = 16.sp)
-  )
+data class Task(
+  @DocumentId val id: String = "",
+  val title: String = "",
+  val priority: String = "",
+  val dueDate: String = "",
+  val dueTime: String = "",
+  val description: String = "",
+  val url: String = "",
+  val flag: Boolean = false,
+  val completed: Boolean = false,
+  val userId: String = ""
+)

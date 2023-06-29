@@ -14,16 +14,26 @@ See the License for the specific language governing permissions and
 limitations under the License.
  */
 
-package com.insu.compose.ui.theme
+package com.insu.compose.screens.edit_task
 
-import androidx.compose.material.Typography
-import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.sp
+enum class EditFlagOption {
+  On,
+  Off;
 
-val Typography =
-  Typography(
-    body1 =
-      TextStyle(fontFamily = FontFamily.Default, fontWeight = FontWeight.Normal, fontSize = 16.sp)
-  )
+  companion object {
+    fun getByCheckedState(checkedState: Boolean?): EditFlagOption {
+      val hasFlag = checkedState ?: false
+      return if (hasFlag) On else Off
+    }
+
+    fun getBooleanValue(flagOption: String): Boolean {
+      return flagOption == On.name
+    }
+
+    fun getOptions(): List<String> {
+      val options = mutableListOf<String>()
+      values().forEach { flagOption -> options.add(flagOption.name) }
+      return options
+    }
+  }
+}

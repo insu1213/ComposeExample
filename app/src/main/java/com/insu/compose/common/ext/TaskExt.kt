@@ -14,16 +14,14 @@ See the License for the specific language governing permissions and
 limitations under the License.
  */
 
-package com.insu.compose.ui.theme
+package com.insu.compose.common.ext
 
-import androidx.compose.material.Typography
-import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.sp
+import com.insu.compose.model.Task
 
-val Typography =
-  Typography(
-    body1 =
-      TextStyle(fontFamily = FontFamily.Default, fontWeight = FontWeight.Normal, fontSize = 16.sp)
-  )
+fun Task?.hasDueDate(): Boolean {
+  return this?.dueDate.orEmpty().isNotBlank()
+}
+
+fun Task?.hasDueTime(): Boolean {
+  return this?.dueTime.orEmpty().isNotBlank()
+}

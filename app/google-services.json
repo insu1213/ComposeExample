@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "952242277376",
+    "project_id": "examplechat-fdac6",
+    "storage_bucket": "examplechat-fdac6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:952242277376:android:6f9787c94a838fde289ce5",
+        "android_client_info": {
+          "package_name": "com.insu.compose"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "952242277376-3bbu745dosi9jvtpvkvga97pk5lt962s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.insu.compose",
+            "certificate_hash": "109010de14014f6b0dc9f771005c84732d3c96ae"
+          }
+        },
+        {
+          "client_id": "952242277376-frlvs4ud77bj8r5n2mhclpmkmp7tv5q3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-mp16zU8bqZOKILYwfnf2Yv9lp3irIug"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "952242277376-frlvs4ud77bj8r5n2mhclpmkmp7tv5q3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
