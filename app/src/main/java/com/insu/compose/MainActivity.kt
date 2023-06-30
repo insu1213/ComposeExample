@@ -18,17 +18,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-//            ComposeExampleTheme {
-//                Column {
-//                    SearchBar()
-//                    Surface(modifier = Modifier.fillMaxSize()) {
-//                        Conversation(SampleData.conversationSample)
-//                    }
-//                }
-//            }
-            MyApp()
-        }
+        setContent { MyApp() } // MyApp() 함수 실행
     }
 }
 

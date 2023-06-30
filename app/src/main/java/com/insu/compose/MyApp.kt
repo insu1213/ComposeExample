@@ -40,14 +40,17 @@ import kotlinx.coroutines.CoroutineScope
 @ExperimentalMaterialApi
 fun MyApp() {
     CommonTheme {
+        // Android 13(Level 33) 에서는 라이브러리 접근 권한을 받아야 함.
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             RequestNotificationPermissionDialog()
         }
 
         Surface(color = MaterialTheme.colors.background) {
-            val appState = rememberAppState()
+            val appState = rememberAppState() // 현재의 앱 상태를 remember 하고 appState 변수에 할당
 
+            // 상단 appBar를 활용하기 위한 Scaffold 사용
             Scaffold(
+                // Snackbar 설정
                 snackbarHost = {
                     SnackbarHost(
                         hostState = it,
@@ -57,8 +60,10 @@ fun MyApp() {
                         }
                     )
                 },
+                // State 설정
                 scaffoldState = appState.scaffoldState
             ) { innerPaddingModifier ->
+                // 화면 넘김
                 NavHost(
                     navController = appState.navController,
                     startDestination = SPLASH_SCREEN,
